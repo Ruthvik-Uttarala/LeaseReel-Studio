@@ -1,0 +1,16 @@
+{
+  "name": "LeaseReel Studio",
+  "short_name": "LeaseReel",
+  "description": "Rental property videos from approved photos.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F2EA",
+  "theme_color": "#43543C",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

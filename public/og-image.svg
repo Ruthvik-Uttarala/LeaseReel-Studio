@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F5F2EA"/>
+  <rect x="76" y="76" width="1048" height="478" rx="30" fill="#FCFAF6" stroke="#D9D5CB"/>
+  <path d="M122 150h116v84H122z" fill="none" stroke="#43543C" stroke-width="10"/>
+  <path d="M169 174l36 18-36 18z" fill="#C98D58"/>
+  <text x="122" y="326" font-family="Inter, system-ui, sans-serif" font-size="70" font-weight="700" fill="#151714">LeaseReel Studio</text>
+  <text x="122" y="407" font-family="Inter, system-ui, sans-serif" font-size="38" fill="#62665E">Rental property videos from approved photos.</text>
+  <text x="122" y="470" font-family="Inter, system-ui, sans-serif" font-size="30" fill="#43543C">$149 pilot · 48 business hours · no new shoot</text>
+</svg>

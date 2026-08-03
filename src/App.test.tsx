@@ -7,20 +7,24 @@ describe("LeaseReel landing page", () => {
   it("renders the core offer and canonical CTAs", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Property videos from the photos you already own.");
-    expect(screen.getAllByText("Request a $149 pilot").length).toBeGreaterThan(0);
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Turn listing photos into ready-to-post property videos.");
+    expect(screen.getAllByText(/\$149/).length).toBeGreaterThan(0);
     expect(screen.getAllByText("Manual accuracy review").length).toBeGreaterThan(0);
   });
 
-  it("switches the interactive hero format", async () => {
+  it("switches the interactive hero format by pointer and keyboard", async () => {
     const user = userEvent.setup();
     render(<App />);
 
+    const reelTab = screen.getByRole("tab", { name: /Reel 9:16/i });
     const websiteTab = screen.getByRole("tab", { name: /Website 16:9/i });
     await user.click(websiteTab);
 
     expect(websiteTab).toHaveAttribute("aria-selected", "true");
     expect(screen.getByText("Landscape website cut")).toBeInTheDocument();
+
+    await user.keyboard("{Home}");
+    expect(reelTab).toHaveAttribute("aria-selected", "true");
   });
 
   it("switches demo tabs and keeps accessible tab state", async () => {

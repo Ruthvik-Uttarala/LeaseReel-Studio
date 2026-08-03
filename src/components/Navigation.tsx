@@ -8,7 +8,7 @@ import { MobileMenu } from "./MobileMenu";
 import { Monogram } from "./Monogram";
 import { createMailtoHref } from "../utils/mailto";
 
-const sectionIds = ["demo", "deliverables", "audience", "process", "accuracy", "package", "faq"];
+const sectionIds = ["demo", "package", "process", "accuracy", "faq"];
 
 export function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);

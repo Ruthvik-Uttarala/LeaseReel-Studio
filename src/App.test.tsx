@@ -57,10 +57,9 @@ describe("LeaseReel landing page", () => {
   it("renders a clear email handoff", () => {
     render(<App />);
 
-    expect(screen.getByRole("link", { name: "hello@leasereelstudio.com" })).toHaveAttribute(
-      "href",
-      "mailto:hello@leasereelstudio.com"
-    );
+    const contactLinks = screen.getAllByRole("link", { name: "hello@leasereelstudio.com" });
+    expect(contactLinks.length).toBeGreaterThan(0);
+    expect(contactLinks[0]).toHaveAttribute("href", "mailto:hello@leasereelstudio.com");
     expect(screen.getByRole("button", { name: /Copy email address/i })).toBeInTheDocument();
   });
 

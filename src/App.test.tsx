@@ -7,9 +7,20 @@ describe("LeaseReel landing page", () => {
   it("renders the core offer and canonical CTAs", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Turn listing photos into leasing videos in 48 business hours.");
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Property videos from the photos you already own.");
     expect(screen.getAllByText("Request a $149 pilot").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Manual accuracy review").length).toBeGreaterThan(0);
+  });
+
+  it("switches the interactive hero format", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const websiteTab = screen.getByRole("tab", { name: /Website 16:9/i });
+    await user.click(websiteTab);
+
+    expect(websiteTab).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByText("Landscape website cut")).toBeInTheDocument();
   });
 
   it("switches demo tabs and keeps accessible tab state", async () => {
@@ -20,7 +31,7 @@ describe("LeaseReel landing page", () => {
     await user.click(storyTab);
 
     expect(storyTab).toHaveAttribute("aria-selected", "true");
-    expect(screen.getByRole("tabpanel")).toHaveTextContent("8-12 seconds");
+    expect(screen.getByRole("tabpanel", { name: /Story \/ Ad Cut/i })).toHaveTextContent("8–12 seconds");
   });
 
   it("opens and closes the mobile menu with Escape", async () => {
@@ -43,12 +54,14 @@ describe("LeaseReel landing page", () => {
     expect(screen.getByText(/restrained camera motion/i)).toBeInTheDocument();
   });
 
-  it("validates the email handoff form before opening mail", async () => {
-    const user = userEvent.setup();
+  it("renders a clear email handoff", () => {
     render(<App />);
 
-    await user.click(screen.getByRole("button", { name: /Continue in email app/i }));
-    expect(screen.getByText(/Add your name, company/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "hello@leasereelstudio.com" })).toHaveAttribute(
+      "href",
+      "mailto:hello@leasereelstudio.com"
+    );
+    expect(screen.getByRole("button", { name: /Copy email address/i })).toBeInTheDocument();
   });
 
   it("renders reduced-motion compatible content", () => {

@@ -5,6 +5,7 @@ import App from "./App";
 import "./styles/global.css";
 import "./styles/premium.css";
 import "./styles/hierarchy-fix.css";
+import "./styles/framer-port.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

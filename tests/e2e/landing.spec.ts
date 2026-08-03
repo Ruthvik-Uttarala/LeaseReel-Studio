@@ -7,9 +7,9 @@ test("homepage loads without console errors and exposes the core offer", async (
   });
 
   await page.goto("/");
-  await expect(page).toHaveTitle(/Rental Property Videos From Existing Photos/);
+  await expect(page).toHaveTitle(/Vacation Rental Videos From Existing Photos/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Turn listing photos");
-  await expect(page.getByText("$149").first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Start one property — $149" })).toBeVisible();
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://www.leasereelstudio.com/");
   expect(errors).toEqual([]);
 });
@@ -17,20 +17,20 @@ test("homepage loads without console errors and exposes the core offer", async (
 test("navigation anchors, demo tabs, FAQ, and footer modal work", async ({ page }) => {
   await page.goto("/");
 
-  const demoLink = page.getByRole("link", { name: "Demo" });
+  const demoLink = page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Sample" });
   if (await demoLink.isVisible()) {
     await demoLink.click();
   } else {
     await page.getByRole("button", { name: /Open menu/i }).click();
-    await page.getByRole("dialog", { name: /Mobile navigation/i }).getByRole("link", { name: "Demo" }).click();
+    await page.getByRole("dialog", { name: /Mobile navigation/i }).getByRole("link", { name: "Sample" }).click();
   }
   await expect(page.locator("#demo")).toBeInViewport();
 
   await page.getByRole("tab", { name: /Website Video/ }).click();
-  await expect(page.getByRole("tabpanel")).toContainText("Property overview");
+  await expect(page.getByRole("tabpanel", { name: /Website Video/ })).toContainText("Property overview");
 
   await page.getByRole("button", { name: /What photographs do you need/i }).click();
-  await expect(page.getByText(/8-15 clear/)).toBeVisible();
+  await expect(page.getByText(/8–15 clear/)).toBeVisible();
 
   await page.locator("footer").scrollIntoViewIfNeeded();
   await page.getByRole("button", { name: "Privacy" }).click({ force: true });

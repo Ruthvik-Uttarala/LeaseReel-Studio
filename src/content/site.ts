@@ -38,7 +38,7 @@ export const site = {
     disclosure:
       "The property image shown is licensed concept photography, not completed client work. Client production uses only photographs the owner or manager authorizes us to process.",
     image:
-      "https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=72&w=2400",
+      "/media/framer-port/living-room-concept.jpg",
     imageAlt: "Bright modern living room used as licensed concept photography",
     assetsReady: false,
     tabs: [
@@ -65,7 +65,7 @@ export const site = {
         label: "Website Video",
         ratio: "Landscape 16:9",
         duration: "15–30 seconds",
-        bullets: ["Direct-booking website", "Email campaigns", "Supported listing portals"],
+        bullets: ["Property overview", "Direct-booking website", "Email campaigns", "Supported listing portals"],
         video: "/media/demo-web.mp4",
         poster: "/media/demo-web-poster.webp"
       }

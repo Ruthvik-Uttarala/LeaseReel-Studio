@@ -12,39 +12,42 @@ export const site = {
   turnaround: "48 business hours",
   canonicalUrl: "https://www.leasereelstudio.com/",
   nav: [
-    { label: "Demo", href: "#demo", id: "demo" },
+    { label: "Sample", href: "#demo", id: "demo" },
     { label: "Package", href: "#package", id: "package" },
     { label: "Process", href: "#process", id: "process" },
     { label: "Accuracy", href: "#accuracy", id: "accuracy" },
     { label: "FAQ", href: "#faq", id: "faq" }
   ] satisfies NavItem[],
   hero: {
-    eyebrow: "For rental property managers",
-    headline: "Turn listing photos into leasing videos in 48 business hours.",
+    eyebrow: "Done-for-you property video",
+    headline: "Property videos from the photos you already own.",
     copy:
-      "LeaseReel Studio creates ready-to-publish Reels, Story cuts, and website videos from property photography your team already owns—without another shoot or another tool to learn.",
-    microcopy: "One property · Three ready-to-use formats · One revision"
+      "LeaseReel turns approved listing photography into a social reel, story cut, and website video—manually reviewed and delivered in 48 business hours.",
+    microcopy: "One property · Three formats · One revision · $149 founding pilot"
   },
   trust: [
-    "No new property shoot",
-    "Uses approved photography",
-    "Three publishing formats",
+    "Approved photos only",
+    "48 business hours",
     "Manual accuracy review",
-    "48-hour turnaround"
+    "One revision included",
+    "No recurring contract"
   ],
   demo: {
-    heading: "See one listing become three ready-to-use assets.",
-    copy: "One approved photo set becomes content for social, Stories, and your property website.",
+    heading: "One photo set. Three places to publish.",
+    copy: "Choose a format to see how the same approved property photography is reframed for each channel.",
     disclosure:
-      "Demo imagery is licensed for portfolio presentation. Client work uses only photographs the property owner or manager authorizes us to use.",
+      "The property image shown is licensed concept photography, not completed client work. Client production uses only photographs the owner or manager authorizes us to process.",
+    image:
+      "https://images.unsplash.com/photo-1771888703723-01d85da1dae1?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=72&w=2400",
+    imageAlt: "Bright modern living room used as licensed concept photography",
     assetsReady: false,
     tabs: [
       {
         id: "social",
         label: "Social Reel",
         ratio: "Vertical 9:16",
-        duration: "20-30 seconds",
-        bullets: ["Property hook", "Feature captions", "Logo and CTA"],
+        duration: "20–30 seconds",
+        bullets: ["Property hook", "Feature captions", "Logo and call to action"],
         video: "/media/demo-reel.mp4",
         poster: "/media/demo-reel-poster.webp"
       },
@@ -52,8 +55,8 @@ export const site = {
         id: "story",
         label: "Story / Ad Cut",
         ratio: "Vertical 9:16",
-        duration: "8-12 seconds",
-        bullets: ["Faster pacing", "Leasing-special or availability CTA"],
+        duration: "8–12 seconds",
+        bullets: ["Faster pacing", "Availability or leasing-special call to action"],
         video: "/media/demo-story.mp4",
         poster: "/media/demo-story-poster.webp"
       },
@@ -61,8 +64,8 @@ export const site = {
         id: "web",
         label: "Website Video",
         ratio: "Landscape 16:9",
-        duration: "Property overview",
-        bullets: ["Website", "Email", "Supported listing portal use"],
+        duration: "15–30 seconds",
+        bullets: ["Property website", "Email campaigns", "Supported listing portals"],
         video: "/media/demo-web.mp4",
         poster: "/media/demo-web-poster.webp"
       }
@@ -71,11 +74,11 @@ export const site = {
   deliverables: [
     {
       title: "Social Reel",
-      copy: "A 20-30-second vertical Reel designed for Instagram, Facebook, TikTok, and YouTube Shorts."
+      copy: "A 20–30-second vertical Reel designed for Instagram, Facebook, TikTok, and YouTube Shorts."
     },
     {
       title: "Story / Ad Cut",
-      copy: "A concise 8-12-second cut for Stories, availability updates, leasing specials, and paid social creative."
+      copy: "A concise 8–12-second cut for Stories, availability updates, leasing specials, and paid social creative."
     },
     {
       title: "Website Version",
@@ -95,11 +98,11 @@ export const site = {
   process: [
     {
       title: "Send the property",
-      copy: "Share 8-15 approved property photos, your logo, verified property facts, and the listing or website URL."
+      copy: "Share 8–15 approved property photos, your logo, verified property facts, and the listing or website URL."
     },
     {
       title: "We produce and review",
-      copy: "We select the sequence, create restrained motion, write the property copy, add branding, and manually inspect every clip."
+      copy: "We choose the sequence, direct restrained motion, write the copy, add branding, and inspect every clip."
     },
     {
       title: "Approve and publish",
@@ -131,8 +134,8 @@ export const site = {
     title: "Founding Property Campaign",
     subline: "One property. Three formats. One clear approval process.",
     included: [
-      "20-30-second Social Reel",
-      "8-12-second Story/ad cut",
+      "20–30-second Social Reel",
+      "8–12-second Story/ad cut",
       "Landscape website version",
       "Property-specific copy pack",
       "Logo, colors, and contact details",
@@ -148,7 +151,7 @@ export const site = {
     title: "Founder & Property Video Producer",
     credential: "Penn State Computer Science",
     copy:
-      "LeaseReel Studio is led by Ruth, a Penn State Computer Science graduate and property-video producer. Every founding-client pilot is handled directly—from asset review and motion direction to final quality control."
+      "Every founding-client pilot is handled directly—from asset review and motion direction to final quality control."
   },
   faq: [
     {
@@ -159,7 +162,7 @@ export const site = {
     {
       question: "What photographs do you need?",
       answer:
-        "Usually 8-15 clear, high-resolution images covering the strongest rooms, exterior, and relevant amenities. We will recommend a sequence after reviewing them."
+        "Usually 8–15 clear, high-resolution images covering the strongest rooms, exterior, and relevant amenities. We recommend a sequence after reviewing them."
     },
     {
       question: "Will AI change the appearance of the property?",
@@ -169,7 +172,7 @@ export const site = {
     {
       question: "Where can we publish the videos?",
       answer:
-        "Deliverables are designed for Instagram, Facebook, TikTok, YouTube Shorts, property websites, and email. Listing-portal support varies by platform and subscription, so platform placement should be confirmed by the client."
+        "Deliverables are designed for Instagram, Facebook, TikTok, YouTube Shorts, property websites, and email. Listing-portal support varies by platform and subscription, so placement should be confirmed by the client."
     },
     {
       question: "Who must own the photo rights?",
@@ -209,7 +212,7 @@ export const pilotIntent: MailIntent = {
   to: site.emails.hello,
   subject: "LeaseReel pilot for [Property Name]",
   body:
-    "Property or community:\nProperty URL:\nNumber of available photos:\nWhere we want to use the video:\nPreferred launch date:"
+    "Property or community:\nProperty URL:\nNumber of approved photos:\nWhere the video will be published:\nPreferred launch date:"
 };
 
 export const portfolioIntent: MailIntent = {

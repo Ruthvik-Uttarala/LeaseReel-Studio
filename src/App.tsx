@@ -17,12 +17,12 @@ const jsonLd = {
   url: "https://www.leasereelstudio.com/",
   email: "hello@leasereelstudio.com",
   description:
-    "Done-for-you property video production from approved listing photography for rental-property managers.",
+    "Done-for-you vacation-rental video production from approved listing photography for property managers and hosts.",
   areaServed: "United States",
   founder: { "@type": "Person", name: "Ruth" },
   offers: {
     "@type": "Offer",
-    name: "Founding Property Campaign",
+    name: "Founding Property Video Package",
     price: "149",
     priceCurrency: "USD"
   }

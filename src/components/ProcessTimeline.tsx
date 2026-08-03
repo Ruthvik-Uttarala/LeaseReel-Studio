@@ -12,8 +12,9 @@ export function ProcessTimeline() {
     <section id="process" className="section-shell process" aria-labelledby="process-title">
       <SectionReveal>
         <div className="section-heading">
-          <p className="eyebrow">Process</p>
-          <h2 id="process-title">From approved photos to finished campaign.</h2>
+          <p className="eyebrow">How it works</p>
+          <h2 id="process-title">A clear three-step handoff.</h2>
+          <p>No production portal and no new software for your team to learn.</p>
         </div>
         <div className="timeline" ref={ref}>
           <m.span
@@ -24,7 +25,7 @@ export function ProcessTimeline() {
           />
           {site.process.map((step, index) => (
             <article key={step.title}>
-              <span>{index + 1}</span>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{step.title}</h3>
               <p>{step.copy}</p>
             </article>

@@ -14,7 +14,15 @@ export function DemoShowcase() {
     event.preventDefault();
     const last = site.demo.tabs.length - 1;
     const next =
-      event.key === "Home" ? 0 : event.key === "End" ? last : event.key === "ArrowRight" ? (active + 1) % (last + 1) : active === 0 ? last : active - 1;
+      event.key === "Home"
+        ? 0
+        : event.key === "End"
+          ? last
+          : event.key === "ArrowRight"
+            ? (active + 1) % (last + 1)
+            : active === 0
+              ? last
+              : active - 1;
     setActive(next);
     refs.current[next]?.focus();
   }
@@ -23,7 +31,7 @@ export function DemoShowcase() {
     <section id="demo" className="section-shell demo-section" aria-labelledby="demo-title">
       <SectionReveal>
         <div className="section-heading">
-          <p className="eyebrow">Sample outcome</p>
+          <p className="eyebrow">Format preview</p>
           <h2 id="demo-title">{site.demo.heading}</h2>
           <p>{site.demo.copy}</p>
         </div>
@@ -76,10 +84,10 @@ export function DemoShowcase() {
             <DemoPlayer tab={current} active />
           </div>
         </LayoutGroup>
-        <div className="comparison-slider" aria-label="Photo to video comparison concept">
-          <span>Approved photo</span>
-          <input type="range" min="0" max="100" defaultValue="58" aria-label="Compare approved photo and video treatment" />
-          <span>Video-ready framing</span>
+        <div className="demo-proof-row" aria-label="Sample disclosure summary">
+          <span>Click a format to change the framing</span>
+          <span>Licensed concept photography</span>
+          <span>No client work is claimed</span>
         </div>
         <p className="disclosure">{site.demo.disclosure}</p>
       </SectionReveal>

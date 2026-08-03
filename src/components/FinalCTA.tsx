@@ -1,54 +1,10 @@
-import { FormEvent, useMemo, useState } from "react";
+import { useState } from "react";
 import { pilotIntent, site } from "../content/site";
 import { MailtoLink } from "./MailtoLink";
 import { SectionReveal } from "./SectionReveal";
-import { createMailtoHref } from "../utils/mailto";
-
-type PilotForm = {
-  name: string;
-  company: string;
-  email: string;
-  url: string;
-  properties: string;
-  notes: string;
-};
-
-const initialForm: PilotForm = {
-  name: "",
-  company: "",
-  email: "",
-  url: "",
-  properties: "",
-  notes: ""
-};
 
 export function FinalCTA() {
-  const [form, setForm] = useState(initialForm);
-  const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
-  const intent = useMemo(
-    () => ({
-      to: site.emails.hello,
-      subject: pilotIntent.subject,
-      body: `Name: ${form.name}\nCompany: ${form.company}\nWork email: ${form.email}\nProperty/listing URL: ${form.url}\nNumber of properties: ${form.properties}\nNotes: ${form.notes}`
-    }),
-    [form]
-  );
-
-  function updateField(field: keyof PilotForm, value: string) {
-    setForm((current) => ({ ...current, [field]: value }));
-  }
-
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setCopied(false);
-    if (!form.name.trim() || !form.company.trim() || !form.email.includes("@") || !form.url.trim()) {
-      setError("Add your name, company, work email, and property URL before continuing.");
-      return;
-    }
-    setError("");
-    window.location.href = createMailtoHref(intent);
-  }
 
   async function copyEmail() {
     await navigator.clipboard?.writeText(site.emails.hello);
@@ -60,52 +16,32 @@ export function FinalCTA() {
       <SectionReveal>
         <div className="final-copy">
           <p className="eyebrow">Next step</p>
-          <h2 id="final-title">Choose one active listing. We’ll turn the photos you already have into a leasing campaign.</h2>
-          <p>Send the listing URL and approved photos. We’ll confirm whether the property is a strong fit before production begins.</p>
-          <div className="hero-actions">
-            <MailtoLink className="button button-primary" intent={pilotIntent}>
-              Request a $149 pilot
-            </MailtoLink>
-            <a className="button button-secondary" href={`mailto:${site.emails.hello}`}>
-              Email hello@leasereelstudio.com
-            </a>
-          </div>
+          <h2 id="final-title">Send one active listing. We’ll tell you whether it is a strong fit.</h2>
+          <p>
+            Start with the property URL. We reply with the photo checklist, production scope, and exact next step before any payment is collected.
+          </p>
           <p className="confidence">No new shoot. No software to learn. No invented property features.</p>
         </div>
-        <form className="pilot-form" onSubmit={submit} noValidate>
-          <h3>Continue in your email app</h3>
-          <label>
-            Name
-            <input value={form.name} onChange={(event) => updateField("name", event.target.value)} autoComplete="name" />
-          </label>
-          <label>
-            Company
-            <input value={form.company} onChange={(event) => updateField("company", event.target.value)} autoComplete="organization" />
-          </label>
-          <label>
-            Work email
-            <input type="email" value={form.email} onChange={(event) => updateField("email", event.target.value)} autoComplete="email" />
-          </label>
-          <label>
-            Property/listing URL
-            <input type="url" value={form.url} onChange={(event) => updateField("url", event.target.value)} />
-          </label>
-          <label>
-            Number of properties
-            <input value={form.properties} onChange={(event) => updateField("properties", event.target.value)} inputMode="numeric" />
-          </label>
-          <label>
-            Notes
-            <textarea value={form.notes} onChange={(event) => updateField("notes", event.target.value)} rows={3} />
-          </label>
-          {error ? <p className="form-error">{error}</p> : null}
-          <button className="button button-primary" type="submit">
-            Continue in email app
-          </button>
+
+        <aside className="contact-card" aria-label="Start a LeaseReel pilot">
+          <span className="contact-kicker">Fastest way to begin</span>
+          <h3>Email one listing URL</h3>
+          <a className="contact-email" href={`mailto:${site.emails.hello}`}>
+            {site.emails.hello}
+          </a>
+          <div className="contact-steps">
+            <span><strong>1</strong> Listing URL</span>
+            <span><strong>2</strong> 8–15 approved photos</span>
+            <span><strong>3</strong> Logo and verified facts</span>
+          </div>
+          <MailtoLink className="button button-primary" intent={pilotIntent}>
+            Start the $149 pilot
+          </MailtoLink>
           <button className="copy-button" type="button" onClick={copyEmail}>
-            {copied ? "Email copied" : `Copy ${site.emails.hello}`}
+            {copied ? "Email copied" : "Copy email address"}
           </button>
-        </form>
+          <small>50% to begin after fit and scope are confirmed.</small>
+        </aside>
       </SectionReveal>
     </section>
   );

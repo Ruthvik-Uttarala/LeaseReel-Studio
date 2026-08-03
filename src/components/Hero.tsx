@@ -1,5 +1,5 @@
 import { m } from "motion/react";
-import { useState } from "react";
+import { KeyboardEvent, useState } from "react";
 import { pilotIntent, site } from "../content/site";
 import { MagneticButton } from "./MagneticButton";
 import { MailtoLink } from "./MailtoLink";
@@ -10,8 +10,8 @@ const formats = [
     label: "Reel",
     ratio: "9:16",
     orientation: "vertical",
-    headline: "A brighter way to show the space",
-    cta: "Book a tour",
+    headline: "A closer look at the stay",
+    cta: "Check availability",
     meta: "20–30 sec social cut"
   },
   {
@@ -19,8 +19,8 @@ const formats = [
     label: "Story",
     ratio: "9:16",
     orientation: "vertical",
-    headline: "Now available",
-    cta: "View the property",
+    headline: "Now accepting bookings",
+    cta: "View available dates",
     meta: "8–12 sec story cut"
   },
   {
@@ -28,8 +28,8 @@ const formats = [
     label: "Website",
     ratio: "16:9",
     orientation: "landscape",
-    headline: "Designed for everyday living",
-    cta: "Explore availability",
+    headline: "See the space before you arrive",
+    cta: "Explore the property",
     meta: "Landscape website cut"
   }
 ] as const;
@@ -38,6 +38,26 @@ export function Hero() {
   const [active, setActive] = useState(0);
   const current = formats[active];
 
+  function onFormatKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+
+    const last = formats.length - 1;
+    const next =
+      event.key === "Home"
+        ? 0
+        : event.key === "End"
+          ? last
+          : event.key === "ArrowRight"
+            ? (active + 1) % formats.length
+            : active === 0
+              ? last
+              : active - 1;
+
+    setActive(next);
+    event.currentTarget.querySelectorAll<HTMLButtonElement>('[role="tab"]')[next]?.focus();
+  }
+
   return (
     <section id="top" className="hero section-shell" aria-labelledby="hero-title">
       <div className="hero-copy">
@@ -45,10 +65,12 @@ export function Hero() {
         <h1 id="hero-title">{site.hero.headline}</h1>
         <p className="hero-lede">{site.hero.copy}</p>
         <div className="hero-actions">
-          <MagneticButton href="#demo">See the sample</MagneticButton>
-          <MailtoLink className="button button-secondary" intent={pilotIntent}>
+          <MailtoLink className="button button-primary" intent={pilotIntent}>
             Start one property — $149
           </MailtoLink>
+          <MagneticButton href="#demo" variant="secondary">
+            See the sample
+          </MagneticButton>
         </div>
         <p className="microcopy">{site.hero.microcopy}</p>
       </div>
@@ -57,9 +79,9 @@ export function Hero() {
         <div className="hero-preview-toolbar">
           <div>
             <span className="preview-status" aria-hidden="true" />
-            <strong>Sample property campaign</strong>
+            <strong>Sample vacation-rental campaign</strong>
           </div>
-          <div className="format-switch" role="tablist" aria-label="Preview format">
+          <div className="format-switch" role="tablist" aria-label="Preview format" onKeyDown={onFormatKeyDown}>
             {formats.map((format, index) => (
               <button
                 key={format.id}

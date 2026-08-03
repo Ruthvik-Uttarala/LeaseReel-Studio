@@ -20,9 +20,9 @@ export const site = {
   ] satisfies NavItem[],
   hero: {
     eyebrow: "For rental property managers",
-    headline: "Turn listing photos into leasing videos in 48 hours.",
+    headline: "Turn listing photos into leasing videos in 48 business hours.",
     copy:
-      "LeaseReel Studio creates ready-to-publish Reels, Story cuts, and website videos from property photography your team already owns-without another shoot or another tool to learn.",
+      "LeaseReel Studio creates ready-to-publish Reels, Story cuts, and website videos from property photography your team already owns—without another shoot or another tool to learn.",
     microcopy: "One property · Three ready-to-use formats · One revision"
   },
   trust: [
@@ -148,7 +148,7 @@ export const site = {
     title: "Founder & Property Video Producer",
     credential: "Penn State Computer Science",
     copy:
-      "LeaseReel Studio is led by Ruth, a Penn State Computer Science graduate and property-video producer. Every founding-client pilot is handled directly-from asset review and motion direction to final quality control."
+      "LeaseReel Studio is led by Ruth, a Penn State Computer Science graduate and property-video producer. Every founding-client pilot is handled directly—from asset review and motion direction to final quality control."
   },
   faq: [
     {

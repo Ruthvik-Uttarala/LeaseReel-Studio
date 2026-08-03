@@ -7,7 +7,7 @@ describe("LeaseReel landing page", () => {
   it("renders the core offer and canonical CTAs", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Turn listing photos into leasing videos in 48 hours.");
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Turn listing photos into leasing videos in 48 business hours.");
     expect(screen.getAllByText("Request a $149 pilot").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Manual accuracy review").length).toBeGreaterThan(0);
   });

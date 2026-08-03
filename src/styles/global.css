@@ -103,6 +103,10 @@ video {
   z-index: 80;
 }
 
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + 24px);
+}
+
 .site-nav {
   position: sticky;
   top: 0;
@@ -204,12 +208,12 @@ video {
   background: var(--ink);
 }
 
-.bottom-cta {
+.button.bottom-cta {
   position: fixed;
   display: none;
   left: 16px;
   right: 16px;
-  bottom: 14px;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   z-index: 65;
   justify-content: center;
   box-shadow: var(--shadow);
@@ -1195,8 +1199,12 @@ p {
     width: 100%;
   }
 
-  .bottom-cta {
+  .button.bottom-cta.is-visible {
     display: inline-flex;
+  }
+
+  .final-cta {
+    padding-bottom: calc(clamp(110px, 18vw, 170px) + env(safe-area-inset-bottom, 0px));
   }
 
   .hero-visual {

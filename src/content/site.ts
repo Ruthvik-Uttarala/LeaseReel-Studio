@@ -19,22 +19,22 @@ export const site = {
     { label: "FAQ", href: "#faq", id: "faq" }
   ] satisfies NavItem[],
   hero: {
-    eyebrow: "Done-for-you property video",
-    headline: "Property videos from the photos you already own.",
+    eyebrow: "For vacation-rental managers",
+    headline: "Turn listing photos into ready-to-post property videos.",
     copy:
-      "LeaseReel turns approved listing photography into a social reel, story cut, and website video—manually reviewed and delivered in 48 business hours.",
+      "One approved photo set becomes a social Reel, Story cut, and website video—branded, manually reviewed, and delivered in 48 business hours.",
     microcopy: "One property · Three formats · One revision · $149 founding pilot"
   },
   trust: [
     "Approved photos only",
+    "Three publish-ready formats",
     "48 business hours",
     "Manual accuracy review",
-    "One revision included",
-    "No recurring contract"
+    "One revision included"
   ],
   demo: {
     heading: "One photo set. Three places to publish.",
-    copy: "Choose a format to see how the same approved property photography is reframed for each channel.",
+    copy: "Choose a format to see how the same approved property photography is reframed for social, Stories, and a direct-booking website.",
     disclosure:
       "The property image shown is licensed concept photography, not completed client work. Client production uses only photographs the owner or manager authorizes us to process.",
     image:
@@ -47,7 +47,7 @@ export const site = {
         label: "Social Reel",
         ratio: "Vertical 9:16",
         duration: "20–30 seconds",
-        bullets: ["Property hook", "Feature captions", "Logo and call to action"],
+        bullets: ["Property hook", "Feature captions", "Logo and booking call to action"],
         video: "/media/demo-reel.mp4",
         poster: "/media/demo-reel-poster.webp"
       },
@@ -56,7 +56,7 @@ export const site = {
         label: "Story / Ad Cut",
         ratio: "Vertical 9:16",
         duration: "8–12 seconds",
-        bullets: ["Faster pacing", "Availability or leasing-special call to action"],
+        bullets: ["Faster pacing", "Availability or booking call to action"],
         video: "/media/demo-story.mp4",
         poster: "/media/demo-story-poster.webp"
       },
@@ -65,7 +65,7 @@ export const site = {
         label: "Website Video",
         ratio: "Landscape 16:9",
         duration: "15–30 seconds",
-        bullets: ["Property website", "Email campaigns", "Supported listing portals"],
+        bullets: ["Direct-booking website", "Email campaigns", "Supported listing portals"],
         video: "/media/demo-web.mp4",
         poster: "/media/demo-web-poster.webp"
       }
@@ -78,27 +78,27 @@ export const site = {
     },
     {
       title: "Story / Ad Cut",
-      copy: "A concise 8–12-second cut for Stories, availability updates, leasing specials, and paid social creative."
+      copy: "A concise 8–12-second cut for Stories, availability updates, booking campaigns, and paid social creative."
     },
     {
       title: "Website Version",
-      copy: "A landscape property video for websites, email campaigns, and portals that support video uploads."
+      copy: "A landscape property video for direct-booking websites, email campaigns, and portals that support video uploads."
     },
     {
       title: "Copy Pack",
-      copy: "A property-specific caption, concise feature highlights, and a clear renter call to action."
+      copy: "A property-specific caption, concise feature highlights, and a clear guest call to action."
     }
   ],
   audience: [
-    "Local and regional property managers",
-    "Apartment and multifamily communities",
-    "Student-housing leasing teams",
-    "Short-term-rental portfolio managers"
+    "Vacation-rental management companies",
+    "Luxury short-term-rental hosts",
+    "Cabin, beach, and destination portfolios",
+    "Direct-booking property brands"
   ],
   process: [
     {
       title: "Send the property",
-      copy: "Share 8–15 approved property photos, your logo, verified property facts, and the listing or website URL."
+      copy: "Share 8–15 approved property photos, your logo, verified property facts, and the listing or direct-booking URL."
     },
     {
       title: "We produce and review",
@@ -122,7 +122,7 @@ export const site = {
     },
     {
       title: "Verified copy",
-      copy: "Rental terms, amenities, availability, and property claims come from information approved by the client."
+      copy: "Amenities, availability, booking details, and property claims come from information approved by the client."
     },
     {
       title: "Problem clips are removed",
@@ -131,7 +131,7 @@ export const site = {
     }
   ],
   pricing: {
-    title: "Founding Property Campaign",
+    title: "Founding Property Video Package",
     subline: "One property. Three formats. One clear approval process.",
     included: [
       "20–30-second Social Reel",
@@ -172,7 +172,7 @@ export const site = {
     {
       question: "Where can we publish the videos?",
       answer:
-        "Deliverables are designed for Instagram, Facebook, TikTok, YouTube Shorts, property websites, and email. Listing-portal support varies by platform and subscription, so placement should be confirmed by the client."
+        "Deliverables are designed for Instagram, Facebook, TikTok, YouTube Shorts, direct-booking websites, and email. Listing-portal support varies by platform, so placement should be confirmed by the client."
     },
     {
       question: "Who must own the photo rights?",
@@ -195,9 +195,9 @@ export const site = {
         "Yes. Portfolio production is available after the first pilot establishes the visual style, approval process, and typical workload."
     },
     {
-      question: "Do you handle inquiries, applications, or tenant screening?",
+      question: "Do you handle guest inquiries or bookings?",
       answer:
-        "No. LeaseReel provides property-media production only. We do not act as a leasing agent, broker, tenant screener, or property manager."
+        "No. LeaseReel provides property-media production only. We do not act as a booking platform, property manager, or guest-communications service."
     }
   ],
   legal: {
@@ -212,7 +212,7 @@ export const pilotIntent: MailIntent = {
   to: site.emails.hello,
   subject: "LeaseReel pilot for [Property Name]",
   body:
-    "Property or community:\nProperty URL:\nNumber of approved photos:\nWhere the video will be published:\nPreferred launch date:"
+    "Property name:\nListing or direct-booking URL:\nNumber of approved photos:\nWhere the video will be published:\nPreferred launch date:"
 };
 
 export const portfolioIntent: MailIntent = {

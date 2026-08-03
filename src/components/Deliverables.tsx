@@ -7,8 +7,9 @@ export function Deliverables() {
     <section id="deliverables" className="section-shell" aria-labelledby="deliverables-title">
       <SectionReveal>
         <div className="section-heading compact">
-          <p className="eyebrow">The pilot package</p>
-          <h2 id="deliverables-title">Not one video. One ready-to-publish property campaign.</h2>
+          <p className="eyebrow">What you receive</p>
+          <h2 id="deliverables-title">Everything needed to publish one property.</h2>
+          <p>One approved photo set becomes a coordinated set of assets instead of another isolated video file.</p>
         </div>
         <div className="deliverable-grid">
           {site.deliverables.map((item, index) => (

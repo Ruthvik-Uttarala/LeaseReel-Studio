@@ -92,6 +92,7 @@ export function Hero() {
                 aria-controls="hero-format-panel"
                 tabIndex={active === index ? 0 : -1}
                 onClick={() => setActive(index)}
+                aria-label={`${format.label} ${format.ratio}`}
               >
                 <span>{format.label}</span>
                 <small>{format.ratio}</small>
